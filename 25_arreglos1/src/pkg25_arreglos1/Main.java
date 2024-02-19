@@ -1,4 +1,5 @@
 package pkg25_arreglos1;
+import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         /*ARREGLO
@@ -39,5 +40,32 @@ public class Main {
         de numeros enteros de tamaño 25 y llenar cada uno de sus
         elementos con un numero al azar entre 5 y 97 no importa que se repitan.
         Por ultimo imprimir el arreglo.*/
+        int arreglo3[] = new int[25];
+        Random r = new Random();
+        System.out.println("*********************************");
+        for( int i = 0; i < arreglo3.length; i++ ){
+            arreglo3[i] = r.nextInt(97-5+1)+5;
+            //imprimir el numero recien generado
+            System.out.println( arreglo3[i] );
+        }
+        /*Hacer un programa que tenga dos arreglos unidimensionales
+        de 25 numeros enteros cada uno:
+            * llenar el primer arreglo con numeros al azar
+              entre 1 y 10 (puede haber numeros repetidos)
+            * el segundo arreglo solo inicializarlo sin valores
+            * El programa copiará todos los numeros del primer arreglo
+              hacia el segundo arreglo pero elevados al cubo.
+          -> al final del programa imprimir el contenido de ambos arreglos.*/
+        int arreglo4[] = new int[25];
+        int arreglo5[] = new int[25];
+        System.out.println("********************************");
+        for( int i = 0; i < arreglo4.length; i++ ){
+            //llenar el primer arreglo con numeros al azar entre 1 y 10
+            arreglo4[i] = r.nextInt(10-1+1)+1;
+            //copiar de arreglo4 hacia arreglo5; pero elevado al cubo
+            arreglo5[i] = (int)Math.pow( arreglo4[i], 3);
+            //imprimir el valor almacenado en cada arreglo
+            System.out.println( arreglo4[i]+"\t"+arreglo5[i]);
+        }
     }    
 }
