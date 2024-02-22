@@ -52,6 +52,48 @@ public class Main {
         //Sobreescribir fruta3 a su version en mayusculas:
         fruta3 = fruta3.toUpperCase();
         System.out.println("fruta3: "+fruta3);
-        //ahora fruts3 se quedo para siempre en mayusculas
+        //ahora fruta3 se quedo para siempre en mayusculas
+        
+        //trim()    devuelve una version del String sin relleno de espacios
+        String fruta4 = "        MANZANA ROJA      ";
+        System.out.println("fruta4: "+fruta4+".");
+        System.out.println("longitud de fruta4: "+fruta4.length());
+        //imprimir una version de fruta4 sin relleno de espacios
+        System.out.println("fruta4 con trim: "+fruta4.trim()+".");
+        System.out.println("fruta4 sin trim: "+fruta4+".");
+        System.out.println("longitud de fruta4 con trim: "+fruta4.trim().length());
+        //sobreescribir fruta4 para quede definitivamente sin espacios de relleno
+        fruta4 = fruta4.trim();
+        System.out.println("fruta4: "+fruta4+".");
+        
+        String vegetal1 = "    ZanaHORIa PEQUEña  ";
+        //imprimir la variable vegetal1 sin espacios de relleno, todo en
+        //minusculas y sin alterar la variable original, en una sola instruccion
+        System.out.println(vegetal1.toLowerCase().trim());
+        System.out.println(vegetal1.trim().toLowerCase());
+        
+        //CONCATENAR elementos char en un String
+        String nombre = "Gerardo";
+        nombre = nombre + 'x';
+        System.out.println(nombre);
+        
+        char ch1 = '.';
+        nombre = nombre + ch1 + ch1 + ch1 + '7';
+        System.out.println(nombre);
+        
+        String ciudad = "San Pedro Sula en el departamento de Cortés";
+        //generar una nueva variable String que sea una copia de la
+        //variable ciudad; pero reemplazar cada espacio en blanco
+        //por un asterisco, sin utilizar el metodo replace.
+        //imprimir la nueva variable String
+        String copia = "";
+        //copiar ciudad hacia copia pero caracter por caracter
+        for( int i = 0; i < ciudad.length(); i++ ){
+            if( ciudad.charAt(i) == ' ' )
+                copia = copia + '*';
+            else
+                copia = copia + ciudad.charAt(i);
+        }
+        System.out.println(copia);
     }    
 }
