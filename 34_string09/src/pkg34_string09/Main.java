@@ -1,4 +1,5 @@
 package pkg34_string09;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         /*método indeOf: devuelve la posicion de la primera coinciencia
@@ -34,5 +35,20 @@ public class Main {
         dicho color ignorando mayusc./minusc. Ejemplo:
         color a buscar: rojo
         veces que se encontró: 3*/
+        Scanner s = new Scanner(System.in);
+        int veces = 0, pos = 0;
+        
+        System.out.print("color a buscar: ");
+        String buscar = s.nextLine();
+        //mientras la posicion en la que me encuentro sea >= 0...
+        while( pos >= 0 ){
+            pos = colores.toUpperCase().indexOf( buscar.toUpperCase(), pos );
+            if( pos >= 0 ){
+                //se encontro!
+                pos++; //hacer avanzar la busqueda
+                veces++; //sumar 1 al contador de coincidencias.
+            }
+        }
+        System.out.println("veces que se encontró: "+veces);
     }    
 }
