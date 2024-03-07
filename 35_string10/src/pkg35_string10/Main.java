@@ -1,4 +1,5 @@
 package pkg35_string10;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //substring (substr)
@@ -31,5 +32,23 @@ public class Main {
         Municipio: 01
         Año de asentamiento: 1982
         Correlativo: 01055*/
+        Scanner s = new Scanner(System.in);
+        System.out.print("Por favor digitar DNI: ");
+        String dni = s.nextLine();
+        dni = dni.trim().replace(" ", "").replace("-", "").replace("_", "");
+        if( dni.length() == 13 ){
+            String depto = dni.substring(0,2);
+            String munic = dni.substring(2,4);
+            int anio = Integer.parseInt( dni.substring(4, 8) );
+            String correlativo = dni.substring(8, 13);
+            
+            System.out.println("Departamento: "+depto);
+            System.out.println("Municipio: "+munic);
+            System.out.println("Año asentamiento: "+anio);
+            System.out.println("Correlativo: "+correlativo);
+        }
+        else{
+            System.out.println("DNI debe ser de 13 digitos.");
+        }
     }    
 }
