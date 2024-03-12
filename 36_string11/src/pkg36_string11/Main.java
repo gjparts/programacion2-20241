@@ -1,4 +1,5 @@
 package pkg36_string11;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         /*método split
@@ -51,6 +52,13 @@ public class Main {
         otro ejemplo:
         Digitar String:Ingenieria En Sistemas .
         numero de palabras: 4*/
-        
+        Scanner s = new Scanner(System.in);
+        System.out.print("Digitar String: ");
+        str = s.nextLine();
+        //forma 1:
+        String arr[] = str.split(" ");
+        System.out.println("numero de palabras: "+arr.length);
+        //forma 2:
+        System.out.println("numero de palabras: "+str.split(" ").length );
     }    
 }
