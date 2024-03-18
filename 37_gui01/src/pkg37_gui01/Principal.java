@@ -11,6 +11,8 @@ package pkg37_gui01;
  */
 import java.awt.Color;
 import javax.swing.JOptionPane; //importar clase para mostrar alertas en pantalla
+import java.util.Calendar; //clase para trabajar con fecha/hora
+import java.text.SimpleDateFormat; //clase para dar formato a fecha/hora
 public class Principal extends javax.swing.JFrame {
 
     /**
@@ -32,6 +34,10 @@ public class Principal extends javax.swing.JFrame {
         etiqueta1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         botonOtro = new javax.swing.JButton();
+        etiqueta2 = new javax.swing.JLabel();
+        botonPrueba = new javax.swing.JButton();
+        etiqueta3 = new javax.swing.JLabel();
+        botonFecha = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerardo 20012002049");
@@ -68,34 +74,71 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        etiqueta2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        etiqueta2.setText("jLabel1");
+
+        botonPrueba.setText("Prueba");
+        botonPrueba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPruebaActionPerformed(evt);
+            }
+        });
+
+        etiqueta3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        etiqueta3.setText("jLabel1");
+
+        botonFecha.setText("fecha/hora");
+        botonFecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonFechaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(botonOtro, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(123, Short.MAX_VALUE)
+                .addContainerGap(178, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))))
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(botonOtro, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(etiqueta2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(etiqueta3))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonOtro, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiqueta2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonPrueba, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE))
+                .addGap(11, 11, 11)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(etiqueta3)
+                    .addComponent(botonFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -122,6 +165,19 @@ public class Principal extends javax.swing.JFrame {
         //cambiar el texto del JLabel que se llama etiqueta1
         etiqueta1.setText("Nuevo texto");
     }//GEN-LAST:event_botonOtroActionPerformed
+
+    private void botonPruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPruebaActionPerformed
+        etiqueta2.setText("Gerardo");
+        JOptionPane.showMessageDialog(this, "Portillo");
+    }//GEN-LAST:event_botonPruebaActionPerformed
+
+    private void botonFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFechaActionPerformed
+        //crear un objeto basado en Calendar con la fecha/hora actual
+        Calendar fecha = Calendar.getInstance();
+        //convertir la fecha del Calendar en un formato mas legible
+        SimpleDateFormat formato = new SimpleDateFormat("YYYY/MM/dd HH:mm:ss");
+        etiqueta3.setText( formato.format(fecha.getTime()) );
+    }//GEN-LAST:event_botonFechaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,8 +215,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonFecha;
     private javax.swing.JButton botonOtro;
+    private javax.swing.JButton botonPrueba;
     private javax.swing.JLabel etiqueta1;
+    private javax.swing.JLabel etiqueta2;
+    private javax.swing.JLabel etiqueta3;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
