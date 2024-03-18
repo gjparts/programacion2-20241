@@ -9,6 +9,8 @@ package pkg37_gui01;
  *
  * @author Gerardo Portillo
  */
+import java.awt.Color;
+import javax.swing.JOptionPane; //importar clase para mostrar alertas en pantalla
 public class Principal extends javax.swing.JFrame {
 
     /**
@@ -27,8 +29,9 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        etiqueta1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        botonOtro = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerardo 20012002049");
@@ -40,31 +43,59 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("jLabel1");
+        etiqueta1.setBackground(new java.awt.Color(255, 102, 102));
+        etiqueta1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiqueta1.setForeground(new java.awt.Color(0, 0, 153));
+        etiqueta1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiqueta1.setText("Este es un Label");
+        etiqueta1.setToolTipText("");
 
-        jButton1.setText("jButton1");
+        jButton1.setBackground(new java.awt.Color(255, 204, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setText("Presionar este boton");
+        jButton1.setToolTipText("Presiona el boton y ve la magia");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        botonOtro.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        botonOtro.setText("Soy otro boton");
+        botonOtro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonOtroActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(198, 198, 198)
+                .addComponent(botonOtro, javax.swing.GroupLayout.PREFERRED_SIZE, 324, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(318, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
+                .addContainerGap(123, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(52, 52, 52))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(34, 34, 34)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(173, Short.MAX_VALUE))
+                .addGap(33, 33, 33)
+                .addComponent(etiqueta1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(botonOtro, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -76,6 +107,21 @@ public class Principal extends javax.swing.JFrame {
         //o sea del backGroundColor
         this.getContentPane().setBackground(this.getBackground());
     }//GEN-LAST:event_formWindowOpened
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        //cuando se hace click en el boton
+        //mostrar una alerta en pantalla
+        //los messageDialog pausan la ejecucion del programa
+        this.getContentPane().setBackground(Color.red); //colorear el fondo en rojo
+        JOptionPane.showMessageDialog(this, "Feliz Semana Santa");
+        //regresar el color de fondo al color que pedimos
+        this.getContentPane().setBackground(this.getBackground());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botonOtroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonOtroActionPerformed
+        //cambiar el texto del JLabel que se llama etiqueta1
+        etiqueta1.setText("Nuevo texto");
+    }//GEN-LAST:event_botonOtroActionPerformed
 
     /**
      * @param args the command line arguments
@@ -113,7 +159,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonOtro;
+    private javax.swing.JLabel etiqueta1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
